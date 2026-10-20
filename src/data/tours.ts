@@ -1,0 +1,833 @@
+export type ItineraryStop = {
+  day: string;
+  title: string;
+  text: string;
+};
+
+export type Tour = {
+  slug: string;
+  title: string;
+  destination: string;
+  category: string;
+  duration: string;
+  price: number;
+  oldPrice?: number;
+  rating: number;
+  reviews: number;
+  image: string;
+  imageAlt: string;
+  badge?: string;
+  featured?: boolean;
+  summary: string;
+  description: string[];
+  highlights: string[];
+  itinerary: ItineraryStop[];
+  included: string[];
+  excluded: string[];
+  meetingPoint: string;
+  groupSize: string;
+  languages: string[];
+  startTime: string;
+};
+
+export const categories = [
+  "Day tours",
+  "Adventure",
+  "Culture",
+  "Cruise",
+  "Desert",
+  "Diving",
+];
+
+export const tours: Tour[] = [
+  {
+    slug: "pyramids-sphinx-grand-museum",
+    title: "Pyramids, Sphinx & the Grand Museum",
+    destination: "giza",
+    category: "Day tours",
+    duration: "Full day · 8 hours",
+    price: 65,
+    oldPrice: 80,
+    rating: 4.9,
+    reviews: 214,
+    image: "/images/giza.jpg",
+    imageAlt: "The Sphinx with the pyramid of Khafre behind it",
+    badge: "Best seller",
+    featured: true,
+    summary:
+      "A private Egyptologist, skip-the-line entry and the three Giza pyramids followed by the treasures of the Grand Egyptian Museum.",
+    description: [
+      "Start early, before the heat and the crowds, with a private guide who grew up in the shadow of the pyramids. You will walk the plateau from the Great Pyramid to the Sphinx, step inside a pyramid chamber and hear the stories that postcards never tell.",
+      "After lunch we drive to the Grand Egyptian Museum, home to Tutankhamun's complete collection and the 4,600-year-old Khufu solar boat. Your guide navigates the highlights so you spend time looking, not queuing.",
+    ],
+    highlights: [
+      "Private Egyptologist guide all day",
+      "Skip-the-line pyramids & museum tickets",
+      "Optional camel ride on the plateau",
+      "Lunch at a local family-run restaurant",
+    ],
+    itinerary: [
+      {
+        day: "07:30",
+        title: "Hotel pickup in Cairo or Giza",
+        text: "Meet your guide in an air-conditioned car and drive to the Giza plateau before the gates fill up.",
+      },
+      {
+        day: "08:00",
+        title: "Pyramids of Giza & the Sphinx",
+        text: "Explore Khufu, Khafre and Menkaure, with time for photos on the panoramic viewpoint and an optional camel ride.",
+      },
+      {
+        day: "12:00",
+        title: "Lunch & the Grand Egyptian Museum",
+        text: "Refuel with a local lunch, then spend the afternoon with Tutankhamun's gold and the museum's star galleries.",
+      },
+      {
+        day: "16:30",
+        title: "Drop-off at your hotel",
+        text: "Return in comfort with time to rest before dinner.",
+      },
+    ],
+    included: [
+      "Private air-conditioned vehicle",
+      "Licensed Egyptologist guide",
+      "All entrance tickets",
+      "Lunch & bottled water",
+      "Hotel pickup and drop-off",
+    ],
+    excluded: ["Camel or horse ride", "Gratuities", "Personal shopping"],
+    meetingPoint: "Your hotel lobby in Cairo or Giza",
+    groupSize: "Private tour (1–8 guests)",
+    languages: ["English", "Spanish", "German", "French"],
+    startTime: "07:30 daily",
+  },
+  {
+    slug: "luxor-hot-air-balloon",
+    title: "Luxor Hot-Air Balloon at Sunrise",
+    destination: "luxor",
+    category: "Adventure",
+    duration: "3 hours · Sunrise",
+    price: 95,
+    rating: 4.9,
+    reviews: 168,
+    image: "/images/luxor.jpg",
+    imageAlt: "Luxor temple glowing in the early morning",
+    badge: "Sunrise",
+    featured: true,
+    summary:
+      "Float above the Valley of the Kings as the sun rises over the Nile — the most magical hour in all of Egypt.",
+    description: [
+      "You will be collected before dawn and driven to the west bank launch site, where your pilot briefs the group over coffee. Then the burner roars and the balloon lifts silently over fields, villages and temples.",
+      "For roughly 45 minutes you drift above the Valley of the Kings and the Colossi of Memnon, with the Nile catching the first light. A support vehicle follows and brings you back for a celebratory breakfast.",
+    ],
+    highlights: [
+      "45-minute sunrise flight",
+      "Licensed balloon pilot",
+      "Hotel pickup & breakfast",
+      "Flight certificate",
+    ],
+    itinerary: [
+      {
+        day: "04:30",
+        title: "Pickup from your Luxor hotel",
+        text: "A driver collects you in the dark and takes you to the west bank for safety briefing and coffee.",
+      },
+      {
+        day: "05:30",
+        title: "Lift-off",
+        text: "Rise over the Theban necropolis as the sun clears the mountains.",
+      },
+      {
+        day: "06:30",
+        title: "Touchdown & breakfast",
+        text: "Land in the desert, receive your certificate and enjoy breakfast before returning to the hotel.",
+      },
+    ],
+    included: [
+      "Hotel transfers",
+      "Balloon flight with licensed pilot",
+      "Safety briefing & insurance",
+      "Light breakfast",
+      "Flight certificate",
+    ],
+    excluded: ["Gratuities", "Photos from the onboard camera"],
+    meetingPoint: "Your hotel lobby in Luxor",
+    groupSize: "Shared basket (max 16)",
+    languages: ["English"],
+    startTime: "Daily at first light",
+  },
+  {
+    slug: "nile-cruise-aswan-luxor",
+    title: "Nile Cruise: Aswan to Luxor",
+    destination: "aswan",
+    category: "Cruise",
+    duration: "4 nights · 5 days",
+    price: 649,
+    oldPrice: 749,
+    rating: 4.8,
+    reviews: 96,
+    image: "/images/felucca.jpg",
+    imageAlt: "A felucca sailing on the Nile",
+    badge: "Small group",
+    featured: true,
+    summary:
+      "Four unhurried nights between Aswan and Luxor, with Philae, Kom Ombo, Edfu and the Valley of the Kings included.",
+    description: [
+      "This is the classic Nile journey, done properly. A small, elegant riverboat, a maximum of 24 guests, and stops that actually matter — Philae at sunset, Kom Ombo at golden hour, Edfu before the coaches arrive.",
+      "Evenings are for deck chairs and cardamom tea rather than entertainment schedules. Your Egyptologist travels with you, and every shore excursion is included with private transfers.",
+    ],
+    highlights: [
+      "4 nights in a Nile-view cabin",
+      "Philae, Kom Ombo & Edfu temples",
+      "Valley of the Kings & Hatshepsut",
+      "All meals on board",
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Aswan & Philae Temple",
+        text: "Embark, settle in, then sail by boat to Philae for the late-afternoon light.",
+      },
+      {
+        day: "Day 2",
+        title: "Kom Ombo",
+        text: "A morning at the double temple of Sobek and Horus, followed by lunch as we sail north.",
+      },
+      {
+        day: "Day 3",
+        title: "Edfu & the Nile",
+        text: "Visit the best-preserved temple in Egypt by horse carriage, then a lazy afternoon on deck.",
+      },
+      {
+        day: "Day 4",
+        title: "Luxor's west bank",
+        text: "Valley of the Kings, Hatshepsut's temple and the Colossi of Memnon.",
+      },
+      {
+        day: "Day 5",
+        title: "Karnak & disembarkation",
+        text: "Explore Karnak with your guide before transfer to your hotel or the airport.",
+      },
+    ],
+    included: [
+      "4 nights on board with full board",
+      "Licensed Egyptologist throughout",
+      "All temple entrance fees",
+      "Airport or hotel transfers",
+      "Tea, coffee & bottled water",
+    ],
+    excluded: ["Flights", "Alcoholic drinks", "Gratuities", "Optional Abu Simbel trip"],
+    meetingPoint: "Aswan river port or Aswan airport",
+    groupSize: "Max 24 guests",
+    languages: ["English", "Spanish", "French"],
+    startTime: "Saturday & Wednesday departures",
+  },
+  {
+    slug: "abu-simbel-day-trip",
+    title: "Abu Simbel Day Trip",
+    destination: "aswan",
+    category: "Culture",
+    duration: "Full day · 9 hours",
+    price: 110,
+    rating: 4.8,
+    reviews: 132,
+    image: "/images/abu-simbel.jpg",
+    imageAlt: "The colossal temples of Abu Simbel",
+    summary:
+      "The colossi of Ramses II at the Sudanese border, reached by a comfortable early-morning drive across the desert.",
+    description: [
+      "Abu Simbel is worth every kilometre. Two temples carved into the rock face, moved block by block to escape the rising waters of Lake Nasser, and still facing the rising sun exactly as Ramses intended.",
+      "We leave Aswan before dawn to arrive ahead of the tour buses, with a guide who can explain the astronomy, the rescue operation and the small temple built for Nefertari.",
+    ],
+    highlights: [
+      "Great Temple of Ramses II",
+      "Temple of Hathor & Nefertari",
+      "Early arrival before the crowds",
+      "Small-group minibus",
+    ],
+    itinerary: [
+      {
+        day: "04:00",
+        title: "Depart Aswan",
+        text: "Drive south through the desert with a rest stop, arriving as the gates open.",
+      },
+      {
+        day: "08:00",
+        title: "Guided tour of both temples",
+        text: "Two hours with your Egyptologist inside the sanctuaries and along the lake shore.",
+      },
+      {
+        day: "12:00",
+        title: "Return & hotel drop-off",
+        text: "Lunch box on the road and back in Aswan by early afternoon.",
+      },
+    ],
+    included: [
+      "Air-conditioned minibus",
+      "Licensed guide",
+      "Entrance tickets",
+      "Breakfast box & water",
+      "Hotel pickup and drop-off",
+    ],
+    excluded: ["Lunch", "Gratuities"],
+    meetingPoint: "Your hotel lobby in Aswan",
+    groupSize: "Small group (max 12)",
+    languages: ["English", "Spanish"],
+    startTime: "Daily at 04:00",
+  },
+  {
+    slug: "red-sea-diving-hurghada",
+    title: "Red Sea Diving & Snorkel Day",
+    destination: "hurghada",
+    category: "Diving",
+    duration: "Full day · 8 hours",
+    price: 85,
+    rating: 4.7,
+    reviews: 203,
+    image: "/images/coral.jpg",
+    imageAlt: "Coral reef in the Red Sea",
+    badge: "Beginner friendly",
+    featured: true,
+    summary:
+      "Two guided dives or snorkel stops on Hurghada's best reefs, with lunch on a small dive boat.",
+    description: [
+      "Whether it is your first time underwater or your fiftieth, our instructors keep groups tiny — four divers per guide. The northern Red Sea offers calm, warm water, hard coral gardens and clouds of reef fish.",
+      "We choose the day's sites by conditions, but favorites include Shaab El Erg, Giftun and the wrecks around Abu Nuhas. Snorkellers get their own guide and the same lunch.",
+    ],
+    highlights: [
+      "Two tank dives or snorkel stops",
+      "Small groups of 4 per instructor",
+      "All equipment included",
+      "Lunch & drinks on board",
+    ],
+    itinerary: [
+      {
+        day: "08:00",
+        title: "Hotel pickup & boat briefing",
+        text: "Transfer to the marina, fit equipment and meet your instructor.",
+      },
+      {
+        day: "09:30",
+        title: "First dive or snorkel stop",
+        text: "A shallow, colorful reef to warm up and get comfortable.",
+      },
+      {
+        day: "12:00",
+        title: "Lunch on board",
+        text: "Freshly prepared Egyptian lunch, fruit and soft drinks.",
+      },
+      {
+        day: "13:00",
+        title: "Second site & return",
+        text: "A deeper wall or wreck depending on the day, then back to the marina and your hotel.",
+      },
+    ],
+    included: [
+      "Hotel transfers",
+      "Diving or snorkelling equipment",
+      "Two guided dives / snorkel stops",
+      "Lunch, water & soft drinks",
+      "Marine park fees",
+    ],
+    excluded: ["Underwater photos", "Gratuities", "PADI certification course"],
+    meetingPoint: "Your hotel lobby in Hurghada",
+    groupSize: "Max 12 on board",
+    languages: ["English", "German", "Russian"],
+    startTime: "Daily at 08:00",
+  },
+  {
+    slug: "white-desert-overnight-camp",
+    title: "White Desert Overnight Camp",
+    destination: "fayoum",
+    category: "Desert",
+    duration: "2 days · 1 night",
+    price: 180,
+    rating: 4.9,
+    reviews: 74,
+    image: "/images/white-desert.jpg",
+    imageAlt: "Chalk formations at sunset in the White Desert",
+    badge: "Star camping",
+    featured: true,
+    summary:
+      "Chalk mushrooms, sand dunes and a private Bedouin camp under some of the darkest skies in Egypt.",
+    description: [
+      "We leave Cairo early and cross the Fayoum depression to Wadi El Rayan, then enter the White Desert as the light turns gold. Your Bedouin team sets camp between the rock formations while you climb the dunes for sunset.",
+      "Dinner is cooked over the fire, followed by tea, music and a sky so full of stars it feels exaggerated. You wake to breakfast in the sand and a slow drive back through the Black Desert.",
+    ],
+    highlights: [
+      "Private Bedouin desert camp",
+      "Sunset & sunrise over the chalk formations",
+      "4x4 dune drive",
+      "Fire-cooked dinner under the stars",
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Cairo → Fayoum → White Desert",
+        text: "Wadi El Rayan waterfalls, Tunis village pottery stop, then 4x4 into the desert for sunset and camp.",
+      },
+      {
+        day: "Day 1 · night",
+        title: "Bedouin dinner & stargazing",
+        text: "Grilled dinner, mint tea and a night in a proper tent with mattresses and blankets.",
+      },
+      {
+        day: "Day 2",
+        title: "Sunrise & the Black Desert",
+        text: "Breakfast at camp, then the volcanic rocks of the Black Desert and the crystal mountain before returning to Cairo.",
+      },
+    ],
+    included: [
+      "4x4 transfers from Cairo",
+      "Bedouin guide & camp crew",
+      "All meals and drinking water",
+      "Camping equipment & blankets",
+      "National park permits",
+    ],
+    excluded: ["Sleeping bag (available on request)", "Gratuities", "Personal snacks"],
+    meetingPoint: "Your hotel in Cairo or Giza",
+    groupSize: "Small group (max 10)",
+    languages: ["English", "Arabic"],
+    startTime: "Fridays & Mondays at 07:00",
+  },
+  {
+    slug: "siwa-oasis-escape",
+    title: "Siwa Oasis Desert Escape",
+    destination: "siwa",
+    category: "Desert",
+    duration: "3 days · 2 nights",
+    price: 320,
+    rating: 4.9,
+    reviews: 58,
+    image: "/images/siwa.jpg",
+    imageAlt: "Palm groves and spring water in Siwa Oasis",
+    badge: "Off the map",
+    featured: true,
+    summary:
+      "Salt lakes, hot springs and the Great Sand Sea on a slow three-day escape to Egypt's most isolated oasis.",
+    description: [
+      "Siwa sits deep in the Western Desert, closer to Libya than to Cairo, and has kept its Berber language and mud-brick architecture intact. We stay in a small eco-lodge among the palms and explore by 4x4 and on foot.",
+      "Float in the salt lakes, watch the sun set from the Oracle of Amun, sandboard the great dunes and sleep in a desert camp with nothing but stars overhead.",
+    ],
+    highlights: [
+      "Great Sand Sea 4x4 safari",
+      "Salt lakes & Cleopatra's Spring",
+      "Oracle of Amun at sunset",
+      "Desert camp with Bedouin dinner",
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Cairo → Siwa",
+        text: "Long desert drive with stops, arrive for a sunset walk through the old town and dinner at the lodge.",
+      },
+      {
+        day: "Day 2",
+        title: "Springs, salt lakes & dunes",
+        text: "Swim in the hot and cold springs, float in the salt lakes, then 4x4 into the Great Sand Sea for sunset and camp.",
+      },
+      {
+        day: "Day 3",
+        title: "Oracle & return",
+        text: "Visit the Temple of Amun, pick up dates and olive oil, then drive back to Cairo.",
+      },
+    ],
+    included: [
+      "Private 4x4 and driver",
+      "2 nights accommodation",
+      "All meals",
+      "Desert camp & equipment",
+      "Local Siwan guide",
+    ],
+    excluded: ["Drinks at the lodge", "Gratuities", "Travel insurance"],
+    meetingPoint: "Your hotel in Cairo or Giza",
+    groupSize: "Private departure (2–6)",
+    languages: ["English", "Arabic"],
+    startTime: "Thursdays at 06:00",
+  },
+  {
+    slug: "alexandria-day-tour",
+    title: "Alexandria: Library, Citadel & Sea",
+    destination: "alexandria",
+    category: "Day tours",
+    duration: "Full day · 10 hours",
+    price: 59,
+    rating: 4.6,
+    reviews: 91,
+    image: "/images/alexandria.jpg",
+    imageAlt: "The Mediterranean seafront in Alexandria",
+    summary:
+      "A day on the Mediterranean with the Bibliotheca Alexandrina, Qaitbay Citadel and a seafood lunch by the sea.",
+    description: [
+      "Leave Cairo behind and follow the desert road north to Alexandria, the city Alexander founded and Cleopatra lost. Start at the Bibliotheca Alexandrina, a modern attempt to rebuild the ancient library, then walk the Roman amphitheatre and the catacombs.",
+      "After a seafood lunch on the corniche, visit the Qaitbay Citadel — built on the site of the Pharos lighthouse — and take a slow walk across Stanley Bridge before heading home.",
+    ],
+    highlights: [
+      "Bibliotheca Alexandrina",
+      "Qaitbay Citadel",
+      "Roman amphitheatre & catacombs",
+      "Seafood lunch on the corniche",
+    ],
+    itinerary: [
+      {
+        day: "07:00",
+        title: "Depart Cairo",
+        text: "Drive north with a coffee stop on the desert road.",
+      },
+      {
+        day: "10:00",
+        title: "Library & Roman sites",
+        text: "Guided visits to the library, the amphitheatre and the catacombs of Kom el Shoqafa.",
+      },
+      {
+        day: "13:00",
+        title: "Lunch & citadel",
+        text: "Fresh seafood by the sea, then Qaitbay Citadel and the corniche.",
+      },
+      {
+        day: "17:00",
+        title: "Return to Cairo",
+        text: "Back at your hotel by early evening.",
+      },
+    ],
+    included: [
+      "Private air-conditioned vehicle",
+      "Licensed guide",
+      "Entrance fees",
+      "Seafood lunch",
+      "Hotel pickup and drop-off",
+    ],
+    excluded: ["Drinks", "Gratuities"],
+    meetingPoint: "Your hotel in Cairo or Giza",
+    groupSize: "Small group (max 12)",
+    languages: ["English", "Spanish"],
+    startTime: "Daily at 07:00",
+  },
+  {
+    slug: "dahab-blue-hole-safari",
+    title: "Dahab Blue Hole Snorkel Safari",
+    destination: "dahab",
+    category: "Adventure",
+    duration: "Full day · 7 hours",
+    price: 55,
+    rating: 4.8,
+    reviews: 119,
+    image: "/images/dahab.jpg",
+    imageAlt: "The Sinai coast at Dahab",
+    summary:
+      "Snorkel the legendary Blue Hole and the Canyon, then eat lunch on a Bedouin beach with the mountains behind.",
+    description: [
+      "The Blue Hole is one of the most famous dive sites on earth, and you do not need to dive to enjoy it. A short shore entry puts you above a coral wall that drops into deep blue, with reef fish, lionfish and the occasional turtle.",
+      "After a second stop at the Canyon, we settle into a Bedouin beach camp for grilled lunch and mint tea. It is a relaxed, small-group day with local guides who know the water.",
+    ],
+    highlights: [
+      "Blue Hole shore snorkel",
+      "Canyon reef stop",
+      "Bedouin beach lunch",
+      "Small group of 8",
+    ],
+    itinerary: [
+      {
+        day: "08:30",
+        title: "Pickup & Blue Hole",
+        text: "Short drive north, gear fitting and a guided snorkel along the wall.",
+      },
+      {
+        day: "11:30",
+        title: "Canyon site",
+        text: "A second snorkel through the shallow canyon and coral gardens.",
+      },
+      {
+        day: "13:00",
+        title: "Bedouin beach lunch",
+        text: "Grilled chicken or fish, salads, fresh bread and tea by the sea.",
+      },
+      {
+        day: "15:30",
+        title: "Return to Dahab",
+        text: "Drop-off at your hotel or the beach promenade.",
+      },
+    ],
+    included: [
+      "Hotel transfers",
+      "Snorkel equipment & guide",
+      "Bedouin lunch & drinks",
+      "Site entrance fees",
+    ],
+    excluded: ["Underwater camera", "Gratuities"],
+    meetingPoint: "Your hotel lobby in Dahab",
+    groupSize: "Max 8 guests",
+    languages: ["English", "Arabic"],
+    startTime: "Daily at 08:30",
+  },
+  {
+    slug: "ras-mohammed-boat-trip",
+    title: "Ras Mohammed Boat Trip",
+    destination: "sharm-el-sheikh",
+    category: "Diving",
+    duration: "Full day · 8 hours",
+    price: 70,
+    rating: 4.7,
+    reviews: 151,
+    image: "/images/sharm.jpg",
+    imageAlt: "The Red Sea coast near Sharm El Sheikh",
+    summary:
+      "Egypt's first marine park by boat: two snorkel stops, a white-sand island and lunch on deck.",
+    description: [
+      "Ras Mohammed is where the Gulf of Suez meets the Gulf of Aqaba, and the mixing currents feed some of the richest coral in the Red Sea. We spend the day on a comfortable day boat with two guided snorkel stops and time on the beach.",
+      "Expect walls of soft coral, surgeonfish, napoleon wrasse and — if the season is right — turtles and reef sharks. Lunch is served on board, and the boat is capped at a small group.",
+    ],
+    highlights: [
+      "Two guided snorkel stops",
+      "Ras Mohammed National Park",
+      "Lunch on board",
+      "Beach time on a quiet island",
+    ],
+    itinerary: [
+      {
+        day: "08:00",
+        title: "Marina departure",
+        text: "Board, receive your gear and sail toward the national park.",
+      },
+      {
+        day: "09:30",
+        title: "First snorkel stop",
+        text: "A shallow coral garden to get comfortable in the water.",
+      },
+      {
+        day: "11:30",
+        title: "Second stop & island",
+        text: "Deeper wall snorkelling, then lunch and beach time.",
+      },
+      {
+        day: "16:00",
+        title: "Return",
+        text: "Sail back to the marina and transfer to your hotel.",
+      },
+    ],
+    included: [
+      "Hotel transfers",
+      "Boat trip & snorkel gear",
+      "National park fees",
+      "Lunch, water & soft drinks",
+      "Snorkel guide",
+    ],
+    excluded: ["Diving upgrade", "Gratuities", "Photos"],
+    meetingPoint: "Your hotel lobby in Sharm El Sheikh",
+    groupSize: "Max 15 on board",
+    languages: ["English", "Italian", "Russian"],
+    startTime: "Daily at 08:00",
+  },
+  {
+    slug: "islamic-cairo-khan-el-khalili",
+    title: "Islamic Cairo & Khan el-Khalili Walk",
+    destination: "giza",
+    category: "Culture",
+    duration: "Half day · 4 hours",
+    price: 45,
+    rating: 4.8,
+    reviews: 87,
+    image: "/images/khan.jpg",
+    imageAlt: "Lanterns and stalls in Khan el-Khalili",
+    summary:
+      "A walking tour through a thousand years of Cairo: mosques, madrasas, hidden rooftops and the great bazaar.",
+    description: [
+      "This is Cairo on foot, the way it should be seen. Begin at the medieval gates of Bab Zuweila, climb to a rooftop for the view over the minarets, and walk the length of Al-Muizz Street past mosques, madrasas and workshops.",
+      "We finish in Khan el-Khalili, where your guide will steer you past the tourist traps to the coppersmiths, perfume sellers and the old café where Naguib Mahfouz used to write.",
+    ],
+    highlights: [
+      "Al-Muizz Street & Bab Zuweila",
+      "Rooftop views over Islamic Cairo",
+      "Local guide from the old city",
+      "Khan el-Khalili bazaar",
+    ],
+    itinerary: [
+      {
+        day: "09:00",
+        title: "Meet at Bab Zuweila",
+        text: "Climb the medieval gate for a rooftop view, then walk north along Al-Muizz Street.",
+      },
+      {
+        day: "10:30",
+        title: "Mosques & workshops",
+        text: "Visit a working madrasa, a tentmaker's workshop and a family-run perfumery.",
+      },
+      {
+        day: "12:00",
+        title: "Khan el-Khalili",
+        text: "Wander the bazaar with your guide, then finish with tea at El Fishawy café.",
+      },
+    ],
+    included: [
+      "Local historian guide",
+      "All entrance fees",
+      "Tea at a historic café",
+      "Bottled water",
+    ],
+    excluded: ["Hotel pickup (available on request)", "Shopping", "Gratuities"],
+    meetingPoint: "Bab Zuweila gate, Islamic Cairo",
+    groupSize: "Max 10 guests",
+    languages: ["English", "French"],
+    startTime: "Daily at 09:00 & 15:00",
+  },
+  {
+    slug: "grand-egyptian-museum-private",
+    title: "Grand Egyptian Museum, Privately",
+    destination: "giza",
+    category: "Culture",
+    duration: "3 hours",
+    price: 39,
+    rating: 4.8,
+    reviews: 64,
+    image: "/images/museum.jpg",
+    imageAlt: "The Egyptian Museum in Cairo",
+    summary:
+      "Tutankhamun's complete collection and the Khufu boat with an Egyptologist who makes 5,000 years feel personal.",
+    description: [
+      "The Grand Egyptian Museum is the largest archaeological museum on earth, and it can overwhelm. We keep it simple: a private Egyptologist, a clear route through the masterpieces, and time to stand in front of Tutankhamun's death mask without a crowd.",
+      "Along the way you will see the 4,600-year-old Khufu solar boat, the grand staircase of royal statues and the galleries that explain daily life along the Nile.",
+    ],
+    highlights: [
+      "Skip-the-line timed entry",
+      "Tutankhamun galleries",
+      "Khufu solar boat",
+      "Private Egyptologist",
+    ],
+    itinerary: [
+      {
+        day: "10:00",
+        title: "Meet at the museum",
+        text: "Skip the queue with your guide and start in the grand atrium.",
+      },
+      {
+        day: "10:30",
+        title: "Royal galleries & Tutankhamun",
+        text: "A curated route through the highlights, with context and stories.",
+      },
+      {
+        day: "12:30",
+        title: "Free time",
+        text: "Stay on for the shops and gardens, or head back to your hotel.",
+      },
+    ],
+    included: ["Museum entrance ticket", "Private Egyptologist", "Bottled water"],
+    excluded: ["Hotel transfers", "Gratuities"],
+    meetingPoint: "Grand Egyptian Museum main entrance",
+    groupSize: "Private tour (1–6)",
+    languages: ["English", "Spanish", "German"],
+    startTime: "Daily at 10:00",
+  },
+  {
+    slug: "luxor-temples-valley",
+    title: "Luxor: Temples & the Valley of the Kings",
+    destination: "luxor",
+    category: "Culture",
+    duration: "2 days",
+    price: 149,
+    rating: 4.9,
+    reviews: 175,
+    image: "/images/luxor.jpg",
+    imageAlt: "Columns of Luxor Temple",
+    summary:
+      "Both banks of the Nile in two unhurried days — Karnak, Luxor Temple, the Valley of the Kings and Hatshepsut.",
+    description: [
+      "Luxor deserves more than a rushed day trip. On this two-day private tour you see the east bank at sunset and the west bank at dawn, when the tombs are cool and the light is soft.",
+      "Your Egyptologist tailors the pace to you, whether that means spending an hour in the tomb of Seti I or sitting with a cold drink in the Karnak gardens.",
+    ],
+    highlights: [
+      "Karnak's hypostyle hall",
+      "Valley of the Kings (3 tombs)",
+      "Hatshepsut's terraced temple",
+      "Sunset at Luxor Temple",
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "East bank: Karnak & Luxor Temple",
+        text: "Morning at Karnak, an afternoon break, then Luxor Temple lit for the evening.",
+      },
+      {
+        day: "Day 2",
+        title: "West bank: kings & queens",
+        text: "Early Valley of the Kings, Hatshepsut's temple and the Colossi of Memnon before lunch.",
+      },
+    ],
+    included: [
+      "Private guide & vehicle",
+      "All entrance tickets",
+      "Lunch on both days",
+      "Hotel pickup and drop-off",
+    ],
+    excluded: ["Optional Tomb of Tutankhamun", "Gratuities", "Hot-air balloon"],
+    meetingPoint: "Your hotel lobby in Luxor",
+    groupSize: "Private tour (1–8)",
+    languages: ["English", "Spanish", "French", "German"],
+    startTime: "Daily at 08:00",
+  },
+  {
+    slug: "marsa-alam-turtle-snorkel",
+    title: "Swim with Sea Turtles in Marsa Alam",
+    destination: "marsa-alam",
+    category: "Diving",
+    duration: "Full day · 7 hours",
+    price: 75,
+    rating: 4.9,
+    reviews: 63,
+    image: "/images/turtle.jpg",
+    imageAlt: "A green sea turtle near Marsa Alam",
+    badge: "Eco pick",
+    summary:
+      "A quiet day on the southern reefs with green sea turtles, dugong grass beds and a Bedouin beach lunch.",
+    description: [
+      "Abu Dabbab is one of the few places in Egypt where you can reliably snorkel with green sea turtles in shallow, calm water. We arrive early, before the day boats, and enter the water with a guide who follows the turtles' rules.",
+      "Between snorkel sessions there is time to relax on the beach, eat a simple lunch and learn about the dugong that grazes on the seagrass nearby.",
+    ],
+    highlights: [
+      "Green sea turtles in shallow water",
+      "Protected bay & seagrass beds",
+      "Small group with marine guide",
+      "Beach lunch included",
+    ],
+    itinerary: [
+      {
+        day: "08:30",
+        title: "Pickup & briefing",
+        text: "Transfer to Abu Dabbab and meet your marine guide for a short ecology briefing.",
+      },
+      {
+        day: "09:30",
+        title: "Turtle snorkel",
+        text: "Enter the water in small groups, keeping a respectful distance from the turtles.",
+      },
+      {
+        day: "12:00",
+        title: "Lunch & free time",
+        text: "Beach lunch, shade and an optional second snorkel.",
+      },
+      {
+        day: "15:00",
+        title: "Return",
+        text: "Transfer back to your hotel.",
+      },
+    ],
+    included: [
+      "Hotel transfers",
+      "Snorkel equipment",
+      "Marine guide",
+      "Beach lunch & water",
+      "Reef conservation fee",
+    ],
+    excluded: ["Underwater camera", "Gratuities"],
+    meetingPoint: "Your hotel lobby in Marsa Alam",
+    groupSize: "Max 10 guests",
+    languages: ["English", "German"],
+    startTime: "Daily at 08:30",
+  },
+];
+
+export const getTour = (slug: string) => tours.find((t) => t.slug === slug);
+
+export const getToursByDestination = (destination: string) =>
+  tours.filter((t) => t.destination === destination);
+
+export const featuredTours = tours.filter((t) => t.featured);
