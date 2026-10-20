@@ -1,7 +1,8 @@
 {
-  "name": "nile-trail",
-  "version": "0.1.0",
+  "name": "mansy-tours",
+  "version": "1.0.0",
   "private": true,
+  "description": "Mansy Tours — Egypt travel website",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
