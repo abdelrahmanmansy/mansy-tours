@@ -1,7 +1,7 @@
-:HL["/mansy-tours/_next/static/chunks/2npuu6u8_y_4y.css","style"]
+:HL["/mansy-tours/_next/static/chunks/2ayzr1noccj-k.css","style"]
 :HL["/mansy-tours/_next/static/media/03bda585a99c6450-s.p.32sris142tqlb.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/mansy-tours/_next/static/media/a343f882a40d2cc9-s.p.1sj6eobyi31rd.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"slug","t":"d","k":"dahab-blue-hole-safari","s":[]},"h":96,"c":"$Q3"}]]
 1:[["children",{"s":"tours","h":64,"c":"$Q2"}]]
-0:{"b":"nYot6mXgxF-FFF8wVZP08","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"KwHg5wCBY7ed_0CjHzBoj","t":{"t":{"s":"","h":16,"c":"$Q1"}}}

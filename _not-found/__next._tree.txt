@@ -1,4 +1,4 @@
-:HL["/mansy-tours/_next/static/chunks/2npuu6u8_y_4y.css","style"]
+:HL["/mansy-tours/_next/static/chunks/2ayzr1noccj-k.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"/_not-found","h":64,"c":"$Q2"}]]
-0:{"b":"nYot6mXgxF-FFF8wVZP08","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"KwHg5wCBY7ed_0CjHzBoj","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
