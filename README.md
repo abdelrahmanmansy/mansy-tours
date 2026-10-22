@@ -21,6 +21,7 @@ Open [http://localhost:3000](http://localhost:3000) to see the site. The pages u
 | --- | --- |
 | `npm run dev` | Start the dev server |
 | `npm run build` | Export the static site to `out/` |
+| `npm run publish:pages` | Push `out/` to the `gh-pages` branch that serves the live site |
 | `npm run lint` | Run ESLint |
 
 > The project uses `output: "export"`, so it builds to plain static files in `out/`. There is no Node server to start — serve the `out/` folder with any static host.
@@ -33,17 +34,20 @@ The site is hosted on GitHub Pages at:
 https://abdelrahmanmansy.github.io/mansy-tours/
 ```
 
-### First-time setup (one time)
-
-1. In the GitHub repo, go to **Settings** → **Pages**.
-2. Under **Build and deployment** → **Source**, choose **GitHub Actions**.
-3. Push the code. The workflow in `.github/workflows/deploy.yml` builds the site and publishes it automatically.
-
 ### How it works
 
-- Every push to `master` triggers the workflow.
-- The build runs `DEPLOY_TARGET=github npm run build`, which exports the site with the `/mansy-tours/` base path.
-- The workflow uploads `out/` and deploys it through `actions/deploy-pages`.
+- GitHub Pages serves the `gh-pages` branch of this repo (`build_type: legacy`, branch `gh-pages`, path `/`).
+- `npm run publish:pages` copies `out/` into that branch (adding `.nojekyll`) and force-pushes it.
+- `next.config.ts` enables the `/mansy-tours` base path and `scripts/fix-pages-paths.mjs` rewrites `/images/...`, `/favicon.ico` and the flat RSC payload paths inside the export, so every asset resolves under the repository sub-path.
+
+### Publishing an update
+
+```bash
+DEPLOY_TARGET=github npm run build
+npm run publish:pages
+```
+
+GitHub rebuilds the Pages site from the branch within a minute or two.
 
 ### Local preview of the production build
 

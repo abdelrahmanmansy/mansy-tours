@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && node scripts/fix-pages-paths.mjs",
+    "publish:pages": "node scripts/publish-pages.mjs",
     "start": "next start",
     "lint": "eslint"
   },
